@@ -1,0 +1,12 @@
+{
+  "dataset": "synthetic",
+  "n_train": 12000,
+  "n_val": 4000,
+  "n_test": 4000,
+  "n_features": 24,
+  "seed": 42,
+  "ae_percentile": 99.0,
+  "supervised_backend_xgb": "sklearn HistGradientBoosting (XGBoost fallback)",
+  "autoencoder_backend": "sklearn",
+  "ae_threshold": 0.8080553412437439
+}
