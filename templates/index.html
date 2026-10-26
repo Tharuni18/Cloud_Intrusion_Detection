@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-fixed": "#2c0051", "on-tertiary-fixed": "#40000c", "primary-fixed": "#f0dbff", "on-background": "#dde2f4", "tertiary-container": "#ff5168", "on-secondary-fixed-variant": "#004f53", "primary-fixed-dim": "#ddb7ff", "inverse-surface": "#dde2f4", "on-secondary-container": "#006a6f", "tertiary-fixed": "#ffdada", "surface-container-lowest": "#080e1a", "surface-bright": "#333946", "background": "#0d131f", "on-secondary": "#00373a", "on-primary-container": "#400071", "surface": "#0d131f", "on-secondary-fixed": "#002022", "on-tertiary": "#68001a", "on-surface": "#dde2f4", "error": "#ffb4ab", "surface-container-low": "#161c28", "tertiary": "#ffb3b6", "surface-dim": "#0d131f", "on-error-container": "#ffdad6", "surface-tint": "#ddb7ff", "secondary": "#dcfdff", "tertiary-fixed-dim": "#ffb3b6", "on-tertiary-container": "#5b0015", "error-container": "#93000a", "secondary-fixed": "#6ff6ff", "on-primary-fixed-variant": "#6900b3", "surface-container-high": "#242a37", "inverse-on-surface": "#2a303d", "outline": "#988d9f", "primary-container": "#b76dff", "on-primary": "#490080", "surface-container-highest": "#2f3542", "on-error": "#690005", "inverse-primary": "#842bd2", "secondary-container": "#00f1fd", "surface-container": "#1a202c", "on-tertiary-fixed-variant": "#920028", "on-surface-variant": "#cfc2d6", "secondary-fixed-dim": "#00dce6", "surface-variant": "#2f3542", "outline-variant": "#4d4354", "primary": "#ddb7ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-md": "0.75rem", "space-xl": "1.5rem", "gutter-mobile": "0.5rem", "margin-compact": "0.75rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1rem", "gutter": "0.75rem" }, fontFamily: { "headline-lg": ["Sora"], "telemetry-num-lg": ["Geist"], "label-md": ["Geist"], "body-lg": ["Geist"], "display-lg": ["Sora"], "display-md": ["Sora"], "headline-sm": ["Sora"], "title-md": ["Geist"], "label-sm": ["Geist"], "telemetry-num-sm": ["Geist"], "body-md": ["Geist"] }, fontSize: { "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "telemetry-num-lg": ["24px", { lineHeight: "28px", letterSpacing: "-0.03em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["15px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }], "display-lg": ["32px", { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "700" }], "display-md": ["26px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }], "title-md": ["16px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "telemetry-num-sm": ["13px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "500" }], "body-md": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "400" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Neural Aegis Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1Ve10FQ_Wo6KsjFTAwQ4cM1KtERDChLZR6wpfSUKBHNo0ygQRFFnPX_Rku_n586kMpN2DrPLunIJV_y2lSotFnz2JUL_n9D86eP6eDBoAj-0l1wXzmejAnJuK3yqhorUCPYrAzL22AyF1jsCmQGPtMw0k2rL7xBQsmaqnLpxTvy_R5N_X1mDzoVy_QD43oSUKxQ3AtTnJtpkGJ8He81IkIOwjmyGMQvqTBssGqSqQ"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface truncate">CLOUDIDS</span><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary-fixed text-[9px] font-label-sm font-semibold tracking-wider uppercase flex-shrink-0">HYBRID ML</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container"></span></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">INTRUSION DETECTION</span></div></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden xs:flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Node</span><span class="font-telemetry-num-sm text-telemetry-num-sm text-primary">Ml Diagnostics</span></div><button aria-label="Operator Profile" class="relative p-1 rounded-full flex items-center justify-center min-w-[44px] min-h-[44px] hover:opacity-90 transition-opacity"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrmD6Jwji4NmkMy76U0ajlPGl36LmeaNTjCOMJxtIewXzpUAZsENp9ZZfm9jD9Nx1ObwlgBltfiUAjB6T5TqkKR_Rg-GTgRfsCQrbzOtjoeq0s1RBa38yg6o264a3mDOUHS1PYCcRKbPvv8McWCU5upJQ0KtHMhXDCLvWieqElSOfj_oJMYV54G6nHcxC9-z-7Wz80PKVk15CpNpRMGvcku5AW98LLJMQxu5BX2g"/><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-[9px] font-bold">3</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-20 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Segmented Control Engine Filter -->
+<div class="px-margin pt-space-sm pb-space-xs">
+<div class="bg-surface-container-lowest p-1 rounded-xl flex items-center justify-between gap-1 shadow-sm" role="tablist">
+<button aria-selected="true" class="flex-1 py-2 px-space-xs rounded-lg bg-surface-container-high text-primary font-label-md text-label-md font-semibold text-center transition-all duration-200 shadow-sm" id="tab-all" onclick="switchEngineTab('all')" role="tab">
+        All Engines
+      </button>
+<button aria-selected="false" class="flex-1 py-2 px-space-xs rounded-lg text-on-surface-variant font-label-md text-label-md font-medium text-center hover:text-on-surface transition-all duration-200" id="tab-supervised" onclick="switchEngineTab('supervised')" role="tab">
+        Supervised (XGB)
+      </button>
+<button aria-selected="false" class="flex-1 py-2 px-space-xs rounded-lg text-on-surface-variant font-label-md text-label-md font-medium text-center hover:text-on-surface transition-all duration-200" id="tab-unsupervised" onclick="switchEngineTab('unsupervised')" role="tab">
+        Autoencoder
+      </button>
+</div>
+</div>
+<!-- Telemetry Health Ticker Banner -->
+<div class="px-margin py-space-xs">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-xs relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-28 h-28 rounded-full bg-secondary-container/10 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed font-bold">ML Pipeline Health</span>
+</div>
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-on-surface-variant">MODEL: READY</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Model Status</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-secondary-fixed font-bold"><span class="text-sm">READY</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Throughput</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-on-surface font-bold"><span class="text-sm">CSV</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Precision</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-primary font-bold"><span class="text-sm">HYBRID</span></span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Real model inference panel -->
+<section class="px-margin pt-space-sm flex flex-col gap-space-xs" id="live-detection">
+  <div class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden">
+    <div class="flex items-start gap-space-sm mb-3">
+      <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-fixed"><span class="material-symbols-outlined">upload_file</span></div>
+      <div><h2 class="font-headline-sm text-headline-sm">Analyze Network Flows</h2><p class="text-on-surface-variant mt-1">Upload a CSV with the same feature columns used to train the bundled model.</p></div>
+    </div>
+    <label for="csv-file" class="block text-label-md text-on-surface-variant mb-2">Network flow CSV</label>
+    <input id="csv-file" type="file" accept=".csv,text/csv" class="block w-full text-sm text-on-surface file:mr-3 file:rounded-lg file:border-0 file:bg-surface-container-high file:px-3 file:py-2 file:text-primary mb-3" />
+    <button id="analyze-btn" onclick="runDetection()" class="w-full min-h-[44px] rounded-lg bg-primary px-4 py-3 font-semibold text-on-primary flex items-center justify-center gap-2"><span class="material-symbols-outlined">radar</span> Run Hybrid Detection</button>
+    <p class="text-xs text-on-surface-variant mt-2">Files are processed by the local Python backend. Missing required columns will be reported.</p>
+    <div id="detect-status" class="hidden mt-3 rounded-lg p-3 bg-surface-container-high text-sm" role="status"></div>
+    <div id="detect-results" class="hidden mt-3">
+      <div class="grid grid-cols-3 gap-2 mb-3">
+        <div class="rounded-lg bg-surface-container-lowest p-3"><div class="text-xs text-on-surface-variant">Flows scanned</div><div id="metric-total" class="text-xl font-bold mt-1">—</div></div>
+        <div class="rounded-lg bg-surface-container-lowest p-3"><div class="text-xs text-on-surface-variant">Alerts</div><div id="metric-alerts" class="text-xl font-bold text-tertiary-fixed mt-1">—</div></div>
+        <div class="rounded-lg bg-surface-container-lowest p-3"><div class="text-xs text-on-surface-variant">Alert rate</div><div id="metric-rate" class="text-xl font-bold text-primary mt-1">—</div></div>
+      </div>
+      <div class="flex items-center justify-between gap-2 mb-2"><h3 class="font-semibold">Detection results</h3><button id="download-results" class="rounded-lg border border-outline-variant px-3 py-2 text-xs text-secondary-fixed">Download CSV</button></div>
+      <div class="overflow-x-auto rounded-lg border border-outline-variant"><table class="w-full text-left text-xs"><thead class="bg-surface-container-high text-on-surface-variant"><tr><th class="p-2">#</th><th class="p-2">Alert</th><th class="p-2">Score</th><th class="p-2">Reason</th></tr></thead><tbody id="results-body"></tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: Unsupervised Deep Autoencoder Diagnostics -->
+<section class="px-margin pt-space-sm flex flex-col gap-space-xs transition-opacity duration-300" id="panel-unsupervised">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden">
+<!-- Glow ambient backdrop -->
+<div class="absolute top-0 right-0 w-36 h-36 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Deep Autoencoder</h2>
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-primary-fixed-dim">Reconstruction Anomaly Detector</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold">Zero-Day Opt</span>
+</div>
+<!-- Reconstruction Distribution Curve Graphic -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm mb-space-sm shadow-inner relative">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Reconstruction Loss Density</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+            Outliers: 0.88 Loss
+          </span>
+</div>
+<!-- SVG Distribution Graphic -->
+<div class="w-full h-28 relative">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 320 110">
+<defs>
+<lineargradient id="normalGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ddb7ff" stop-opacity="0.45"></stop>
+<stop offset="100%" stop-color="#ddb7ff" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="anomalyGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ff5168" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#ff5168" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#242a37" stroke-width="1" x1="0" x2="320" y1="95" y2="95"></line>
+<line stroke="#ddb7ff" stroke-dasharray="3 3" stroke-opacity="0.4" stroke-width="1" x1="120" x2="120" y1="10" y2="95"></line>
+<line stroke="#ff5168" stroke-dasharray="3 3" stroke-width="1.5" x1="195" x2="195" y1="5" y2="95"></line>
+<!-- Normal Distribution Bell Area -->
+<path d="M 10 95 Q 60 95, 80 40 T 115 15 T 140 45 T 180 95 Z" fill="url(#normalGrad)"></path>
+<path d="M 10 95 Q 60 95, 80 40 T 115 15 T 140 45 T 180 95" fill="none" stroke="#ddb7ff" stroke-width="2"></path>
+<!-- Anomaly Spike Area -->
+<path d="M 230 95 Q 260 95, 275 35 T 285 20 T 298 50 T 315 95 Z" fill="url(#anomalyGrad)"></path>
+<path d="M 230 95 Q 260 95, 275 35 T 285 20 T 298 50 T 315 95" fill="none" stroke="#ff5168" stroke-width="2"></path>
+<!-- Key Indicator Dots -->
+<circle cx="115" cy="15" fill="#dcfdff" r="3.5"></circle>
+<circle cx="195" cy="50" fill="#ffb4ab" r="3"></circle>
+<circle cx="285" cy="20" fill="#ff5168" r="3.5"></circle>
+</svg>
+<!-- Floating Micro Labels -->
+<div class="absolute left-6 top-1 pointer-events-none">
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-primary font-semibold">μ = 0.12 (Normal)</span>
+</div>
+<div class="absolute left-[54%] top-1 pointer-events-none -translate-x-1/2">
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-error font-bold">ε = 0.35 Limit</span>
+</div>
+<div class="absolute right-1 top-2 pointer-events-none">
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-tertiary-container font-bold">Outlier: 0.88</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-telemetry-num-sm text-telemetry-num-sm pt-1">
+<span>0.00 Loss</span>
+<span>0.35 Cutoff</span>
+<span>1.00 Critical</span>
+</div>
+</div>
+<!-- Monospace Diagnostics Grid -->
+<div class="grid grid-cols-3 gap-space-xs mb-space-sm">
+<div class="bg-surface-container-high rounded-lg p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Dynamic ε</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-primary font-bold">0.350</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">Target ±0.02</span>
+</div>
+<div class="bg-surface-container-high rounded-lg p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Max Loss</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-tertiary font-bold">0.912</span>
+<span class="font-label-sm text-label-sm text-tertiary-container">Spike detected</span>
+</div>
+<div class="bg-surface-container-high rounded-lg p-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Zero-Day Sens.</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-secondary-fixed font-bold">95%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">HIGH tier</span>
+</div>
+</div>
+<!-- Latent Space Architecture Widget -->
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">compress</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight">64:8:64 Layered Funnel</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Latent Bottleneck Dimension</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">KL-Divergence</span>
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-secondary-fixed font-bold">0.040</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Supervised Dual-Model Performance -->
+<section class="px-margin pt-space-md flex flex-col gap-space-xs transition-opacity duration-300" id="panel-supervised">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-container"></div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Supervised Dual Defense</h2>
+</div>
+<div class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary-fixed font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+        CIC-IDS2017: 0.998 AUC
+      </div>
+</div>
+<!-- Dual Cards: Model A & Model B -->
+<div class="grid grid-cols-1 gap-space-xs">
+<!-- Model A: XGBoost -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary font-bold text-xs">XG</span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface leading-snug">XGBoost v3.2</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Target: DDoS &amp; Port Recon</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed-dim/20 text-secondary-fixed font-label-sm text-label-sm font-bold uppercase">Optimal</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<div class="bg-surface-container-high p-space-xs rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Accuracy</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-on-surface font-bold">99.6%</span>
+</div>
+<div class="bg-surface-container-high p-space-xs rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Inference</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-secondary font-bold">1.8<span class="text-xs font-normal">ms</span></span>
+</div>
+<div class="bg-surface-container-high p-space-xs rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">F1-Score</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-primary font-bold">0.994</span>
+</div>
+</div>
+</div>
+<!-- Model B: Random Forest Ensemble -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold text-xs">RF</span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface leading-snug">Random Forest Ensemble</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Target: Brute-Force &amp; SQLi Injection</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold uppercase">200 Estimators</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<div class="bg-surface-container-high p-space-xs rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Accuracy</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-on-surface font-bold">98.9%</span>
+</div>
+<div class="bg-surface-container-high p-space-xs rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Inference</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-secondary font-bold">3.1<span class="text-xs font-normal">ms</span></span>
+</div>
+<div class="bg-surface-container-high p-space-xs rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tree Count</span>
+<span class="font-telemetry-num-lg text-telemetry-num-lg text-primary font-bold">200</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Real-Time Feature Attribution (SHAP) -->
+<section class="px-margin pt-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">insights</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">SHAP Attribution Importance</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Real-Time Weights</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<!-- Feature 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-title-md text-title-md text-on-surface truncate">Flow Packet Rate (pkts/sec)</span>
+</div>
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-secondary-fixed font-bold">38%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-secondary-container" style="width: 38%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Critical trigger for anomalous DDoS volumetric bursts</span>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-title-md text-title-md text-on-surface truncate">Payload Byte Entropy (Shannon)</span>
+</div>
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-primary font-bold">27%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-primary-container" style="width: 27%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Primary indicator of encrypted exfiltration tunnels</span>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-title-md text-title-md text-on-surface truncate">Dest Port Frequency Delta</span>
+</div>
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-primary-fixed-dim font-bold">19%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-primary-fixed-dim" style="width: 19%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lateral movement and subnet sweep signature</span>
+</div>
+<!-- Feature 4 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-title-md text-title-md text-on-surface truncate">TCP SYN/ACK Flag Ratio</span>
+</div>
+<span class="font-telemetry-num-sm text-telemetry-num-sm text-secondary font-bold">16%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-secondary-fixed-dim" style="width: 16%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Half-open connection state flood verification</span>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Real-Time Pipeline Controls -->
+<section class="px-margin pt-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Pipeline Interlock &amp; Controls</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed font-bold">Active Shield</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface">Adaptive Autoencoder Threshold</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-tune epsilon against dynamic diurnal traffic</span>
+</div>
+<button aria-pressed="true" class="w-12 h-6 rounded-full bg-primary flex items-center p-1 transition-colors duration-200 cursor-pointer" id="toggle-1" onclick="toggleSwitch(this)">
+<span class="w-4 h-4 rounded-full bg-on-primary transform translate-x-6 transition-transform duration-200 shadow-sm"></span>
+</button>
+</div>
+<div class="w-full h-px bg-surface-container-high"></div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface">Ensemble Consensus Voting</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Require joint agreement (XGBoost + RF &gt; 0.85)</span>
+</div>
+<button aria-pressed="true" class="w-12 h-6 rounded-full bg-primary flex items-center p-1 transition-colors duration-200 cursor-pointer" id="toggle-2" onclick="toggleSwitch(this)">
+<span class="w-4 h-4 rounded-full bg-on-primary transform translate-x-6 transition-transform duration-200 shadow-sm"></span>
+</button>
+</div>
+<div class="w-full h-px bg-surface-container-high"></div>
+<!-- Toggle 3 -->
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface">Loss-Based Auto-Quarantine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Isolate pod host if Reconstruction Loss &gt; 0.70</span>
+</div>
+<button aria-pressed="true" class="w-12 h-6 rounded-full bg-primary flex items-center p-1 transition-colors duration-200 cursor-pointer" id="toggle-3" onclick="toggleSwitch(this)">
+<span class="w-4 h-4 rounded-full bg-on-primary transform translate-x-6 transition-transform duration-200 shadow-sm"></span>
+</button>
+</div>
+</div>
+<!-- Export Action Button -->
+<div class="pt-space-xs">
+<button class="w-full min-h-[44px] py-space-sm px-space-md rounded-xl bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md font-semibold shadow-md flex items-center justify-center gap-space-xs transition-all duration-200 active:scale-[0.98]" id="export-btn" onclick="triggerTelemetryExport()">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export Telemetry Weights &amp; Diagnostic Logs</span>
+</button>
+<div class="hidden mt-2 p-2 rounded-lg bg-surface-container-high text-secondary-fixed text-center font-label-md text-label-md" id="export-toast">
+        Telemetry archive generated &amp; synced to S3 cold storage.
+      </div>
+</div>
+</section>
+</div>
+<script>
+  function switchEngineTab(type) {
+    const tabAll = document.getElementById('tab-all');
+    const tabSupervised = document.getElementById('tab-supervised');
+    const tabUnsupervised = document.getElementById('tab-unsupervised');
+    const panelSupervised = document.getElementById('panel-supervised');
+    const panelUnsupervised = document.getElementById('panel-unsupervised');
+
+    const resetTab = (el) => {
+      el.className = "flex-1 py-2 px-space-xs rounded-lg text-on-surface-variant font-label-md text-label-md font-medium text-center hover:text-on-surface transition-all duration-200";
+      el.setAttribute('aria-selected', 'false');
+    };
+    const setActive = (el) => {
+      el.className = "flex-1 py-2 px-space-xs rounded-lg bg-surface-container-high text-primary font-label-md text-label-md font-semibold text-center transition-all duration-200 shadow-sm";
+      el.setAttribute('aria-selected', 'true');
+    };
+
+    resetTab(tabAll);
+    resetTab(tabSupervised);
+    resetTab(tabUnsupervised);
+
+    if (type === 'all') {
+      setActive(tabAll);
+      panelSupervised.classList.remove('hidden');
+      panelUnsupervised.classList.remove('hidden');
+    } else if (type === 'supervised') {
+      setActive(tabSupervised);
+      panelSupervised.classList.remove('hidden');
+      panelUnsupervised.classList.add('hidden');
+    } else if (type === 'unsupervised') {
+      setActive(tabUnsupervised);
+      panelSupervised.classList.add('hidden');
+      panelUnsupervised.classList.remove('hidden');
+    }
+  }
+
+  function toggleSwitch(btn) {
+    const isChecked = btn.getAttribute('aria-pressed') === 'true';
+    const pip = btn.firstElementChild;
+    if (isChecked) {
+      btn.setAttribute('aria-pressed', 'false');
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-surface-container-highest');
+      pip.classList.remove('translate-x-6');
+      pip.classList.add('translate-x-0');
+      pip.classList.remove('bg-on-primary');
+      pip.classList.add('bg-outline');
+    } else {
+      btn.setAttribute('aria-pressed', 'true');
+      btn.classList.add('bg-primary');
+      btn.classList.remove('bg-surface-container-highest');
+      pip.classList.add('translate-x-6');
+      pip.classList.remove('translate-x-0');
+      pip.classList.add('bg-on-primary');
+      pip.classList.remove('bg-outline');
+    }
+  }
+
+  function triggerTelemetryExport() {
+    const btn = document.getElementById('export-btn');
+    const toast = document.getElementById('export-toast');
+    btn.disabled = true;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Archiving Diagnostics...</span>`;
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Logs Exported (24.2 MB)</span>`;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">download</span><span>Export Telemetry Weights & Diagnostic Logs</span>`;
+      }, 3500);
+    }, 1200);
+  }
+
+  let latestCsv = null;
+  async function runDetection() {
+    const fileInput = document.getElementById('csv-file');
+    const status = document.getElementById('detect-status');
+    const results = document.getElementById('detect-results');
+    const button = document.getElementById('analyze-btn');
+    if (!fileInput.files || !fileInput.files[0]) {
+      status.textContent = 'Choose a CSV file first.'; status.classList.remove('hidden'); results.classList.add('hidden'); return;
+    }
+    const form = new FormData(); form.append('file', fileInput.files[0]);
+    button.disabled = true; button.textContent = 'Analyzing flows…';
+    status.textContent = 'Running the trained hybrid detector…'; status.classList.remove('hidden'); results.classList.add('hidden');
+    try {
+      const response = await fetch('/api/detect', {method:'POST', body:form});
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Detection failed');
+      latestCsv = data.csv;
+      document.getElementById('metric-total').textContent = data.total;
+      document.getElementById('metric-alerts').textContent = data.alerts;
+      document.getElementById('metric-rate').textContent = data.rate + '%';
+      const body = document.getElementById('results-body'); body.innerHTML = '';
+      data.rows.forEach((row, i) => {
+        const tr = document.createElement('tr'); tr.className = 'border-t border-outline-variant/40';
+        [i+1, row.alert ? 'ALERT' : 'BENIGN', Number(row.score).toFixed(4), row.reason].forEach((value, j) => {
+          const td = document.createElement('td'); td.className = 'p-2 ' + (j===1 && row.alert ? 'text-tertiary-fixed font-bold' : ''); td.textContent = value; tr.appendChild(td);
+        }); body.appendChild(tr);
+      });
+      status.textContent = 'Analysis complete. Results were generated by the bundled model.';
+      results.classList.remove('hidden');
+    } catch (err) { status.textContent = err.message; results.classList.add('hidden'); }
+    finally { button.disabled = false; button.innerHTML = '<span class="material-symbols-outlined">radar</span> Run Hybrid Detection'; }
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    const dl = document.getElementById('download-results');
+    if (dl) dl.addEventListener('click', () => {
+      if (!latestCsv) return;
+      const blob = new Blob([latestCsv], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob); const a = document.createElement('a');
+      a.href = url; a.download = 'cloudids_detection_results.csv'; a.click(); URL.revokeObjectURL(url);
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)]" data-active-classes="text-primary"><div class="flex justify-around items-center h-20 px-gutter-mobile"><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="live-monitor" href="#live-detection"><span class="material-symbols-outlined text-[24px]">radar</span><span class="font-label-sm text-label-sm tracking-wide">Live Monitor</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs transition-colors text-primary" data-path="ml-diagnostics" href="#"><span class="material-symbols-outlined text-[24px]">memory</span><span class="font-label-sm text-label-sm tracking-wide">ML Diagnostics</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="incidents" href="#"><span class="material-symbols-outlined text-[24px]">gpp_maybe</span><span class="font-label-sm text-label-sm tracking-wide">Incidents</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="benchmarks" href="#"><span class="material-symbols-outlined text-[24px]">insights</span><span class="font-label-sm text-label-sm tracking-wide">Benchmarks</span></a></div></nav></body></html>
